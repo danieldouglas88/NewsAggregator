@@ -1,3 +1,7 @@
+<?php session_start([
+    'cookie_lifetime' => 600,
+]); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +50,7 @@
               <a class="nav-link" href="#us">US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:alert('This web app was created by Daniel Douglas, Myra Sarmiento and Blank for their ITC250 Class at Seattle Central College.');">About</a>
+              <a class="nav-link" href="javascript:alert('This web app was created by Daniel Douglas, Myra Sarmiento, James Shively and Dann Frey for their ITC 250 Class at Seattle Central College.');">About</a>
             </li>
           </ul>
         </div>

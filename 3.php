@@ -1,0 +1,3 @@
+<?php
+
+renderContent("NATION", "us");

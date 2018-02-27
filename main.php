@@ -1,92 +1,63 @@
 <?php
 
-$url = 'https://news.google.com/news/rss/headlines/section/topic/WORLD';
+function renderContent($category, $id) {
+$url = 'https://news.google.com/news/rss/headlines/section/topic/' . $category. '';
 $xml = simplexml_load_file($url);
 
-foreach($xml as $news) {
+//here are the session variables
+$_SESSION["title"] = $xml->channel[0]->item->title;
+$_SESSION["link"] = $xml->channel[0]->item->link;
+$_SESSION["description"] = $xml->channel[0]->item->description;
+
+$_SESSION["title2"] = $xml->channel[0]->item[1]->title;
+$_SESSION["link2"] = $xml->channel[0]->item[1]->link;
+$_SESSION["description2"] = $xml->channel[0]->item[1]->description;
+
+$_SESSION["title3"] = $xml->channel[0]->item[2]->title;
+$_SESSION["link3"] = $xml->channel[0]->item[2]->link;
+$_SESSION["description3"] = $xml->channel[0]->item[2]->description;
+
 echo '
-<div class="row" id="">
+<br><div class="row" id="' . $id . '">
           <div class="card h-100">
             <div class="card-body">
               <h4 class="card-title">
               </h4>
-              <h5>CATEGORY: WORLD</h5>
-              <h4>' . $news->item->title . '</h4>
-              <a href="' . $news->item->link . '">Source Page</a>
-              <p>' . $news->item->description  . '<p>
+              <h5>CATEGORY: ' . $category . '</h5>
+              <h4>' . $_SESSION["title"] .  '</h4>
+              <a href="' . $_SESSION["link"] . '">Source Page</a>
+              <p>' . $_SESSION["description"]  . '<p>
               <br>
               <hr>
-              <h4>' . $news->item[1]->title . '</h4>
-              <a href="' . $news->item[1]->link . '">Source Page</a>
-              <p>' . $news->item[1]->description  . '<p>
+              <h4>' . $_SESSION["title2"] .  '</h4>
+              <a href="' . $_SESSION["link2"] . '">Source Page</a>
+              <p>' . $_SESSION["description2"]  . '<p>
               <br>
               <hr>
-              <h4>' . $news->item[2]->title . '</h4>
-              <a href="' . $news->item[2]->link . '">Source Page</a>
-              <p>' . $news->item[2]->description  . '<p>
+              <h4>' . $_SESSION["title3"] .  '</h4>
+              <a href="' . $_SESSION["link3"] . '">Source Page</a>
+              <p>' . $_SESSION["description3"]  . '<p>
+              <br>
+           <button onclick="onClick()" class="btn btn-primary">Clear Cache.</button>
             </div>
           </div>
-      </div>
-';
+      </div>';
 }
+?>
 
-$url = 'https://news.google.com/news/rss/headlines/section/topic/TECHNOLOGY';
-$xml = simplexml_load_file($url);
+<script>
+//function that ends php session
 
-foreach($xml as $news) {
-echo '
-<br><div class="row" id="tech">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">
-              </h4>
-              <h5>CATEGORY: TECHNOLOGY</h5>
-              <h4>' . $news->item->title . '</h4>
-              <a href="' . $news->item->link . '">Source Page</a>
-              <p>' . $news->item->description  . '<p>
-              <br>
-              <hr>
-              <h4>' . $news->item[1]->title . '</h4>
-              <a href="' . $news->item[1]->link . '">Source Page</a>
-              <p>' . $news->item[1]->description  . '<p>
-              <br>
-              <hr>
-              <h4>' . $news->item[2]->title . '</h4>
-              <a href="' . $news->item[2]->link . '">Source Page</a>
-              <p>' . $news->item[2]->description  . '<p>
-            </div>
-          </div>
-      </div>
-';
-}
+//Javascript function with php functions inside
+function onClick(){ 
 
-$url = 'https://news.google.com/news/rss/headlines/section/topic/NATION';
-$xml = simplexml_load_file($url);
+<?php
+session_destroy();
+session_unset();
 
-foreach($xml as $news) {
-echo '
-<br><div class="row" id="UNITED STATES">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">
-              </h4>
-              <h5>CATEGORY: US</h5>
-              <h4>' . $news->item->title . '</h4>
-              <a href="' . $news->item->link . '">Source Page</a>
-              <p>' . $news->item->description  . '<p>
-              <br>
-              <hr>
-              <h4>' . $news->item[1]->title . '</h4>
-              <a href="' . $news->item[1]->link . '">Source Page</a>
-              <p>' . $news->item[1]->description  . '<p>
-              <br>
-              <hr>
-              <h4>' . $news->item[2]->title . '</h4>
-              <a href="' . $news->item[2]->link . '">Source Page</a>
-              <p>' . $news->item[2]->description  . '<p>
-            </div>
-          </div>
-      </div>
-';
-}
-
+?>
+    
+console.log("Session has ended.");
+alert("You've ended the php session.");
+} 
+</script>
