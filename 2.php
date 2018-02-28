@@ -1,3 +1,3 @@
 <?php
 
-renderContent("TECHNOLOGY", "tech");
+renderContent("TECHNOLOGY", "tech", 2);

@@ -1,7 +1,8 @@
 <?php session_start([
     'cookie_lifetime' => 600,
-]); ?>
+]); 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,9 @@
     <meta name="author" content="">
 
     <title>Your trusted source for news!</title>
-
+ 
+ 
+      
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     

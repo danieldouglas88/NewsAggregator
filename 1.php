@@ -2,4 +2,4 @@
 
 include 'main.php';
 
-renderContent("WORLD", "");
+renderContent("WORLD", "", 1);

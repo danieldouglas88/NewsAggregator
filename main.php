@@ -1,6 +1,6 @@
 <?php
 
-function renderContent($category, $id) {
+function renderContent($category, $id, $button) {
 $url = 'https://news.google.com/news/rss/headlines/section/topic/' . $category. '';
 $xml = simplexml_load_file($url);
 
@@ -16,7 +16,7 @@ $_SESSION["description2"] = $xml->channel[0]->item[1]->description;
 $_SESSION["title3"] = $xml->channel[0]->item[2]->title;
 $_SESSION["link3"] = $xml->channel[0]->item[2]->link;
 $_SESSION["description3"] = $xml->channel[0]->item[2]->description;
-
+    
 echo '
 <br><div class="row" id="' . $id . '">
           <div class="card h-100">
@@ -38,26 +38,48 @@ echo '
               <a href="' . $_SESSION["link3"] . '">Source Page</a>
               <p>' . $_SESSION["description3"]  . '<p>
               <br>
-           <button onclick="onClick()" class="btn btn-primary">Clear Cache.</button>
-            </div>
+           <button id="btn' . $button .'" class="btn btn-primary">Clear Cache</button>
+           <br>
+           <p id="' . $button .'"></p>
+            </div> 
           </div>
-      </div>';
+      </div>        
+';
 }
 ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+
 <script>
-//function that ends php session
+//jQuery for rendering timestamps in <p> tags with id of 1, 2 and 3
 
-//Javascript function with php functions inside
-function onClick(){ 
-
-<?php
-session_destroy();
-session_unset();
-
+    $(document).ready(function(){
+    $("#btn1").click(function(){
+        <?php
+$_SESSION = array();
 ?>
-    
-console.log("Session has ended.");
-alert("You've ended the php session.");
-} 
+    var d = new Date();
+    d =  d.getTime();
+        $("#1").html("Session cache ended at " + d + " universal time.");
+        }); 
+        
+    $("#btn2").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#2").html("Session cache ended at " + d + " universal time.");
+        });
+                
+    $("#btn3").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#3").html("Session cache ended at " + d + " universal time.");
+        }); 
+    });
+        
 </script>
