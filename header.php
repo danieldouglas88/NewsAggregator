@@ -14,8 +14,6 @@
     <meta name="author" content="">
 
     <title>Your trusted source for news!</title>
- 
- 
       
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +24,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
+      
+      <style>
+      
+      button{
+	margin-right: 20px;
+}
+      </style>
 
   </head>
 
@@ -42,24 +47,46 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
        
-            </li>         
+            </li>        
+                          <li class="nav-item">
+                         <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">News 1
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">WORLD</a></li>
+      <li><a href="#loc">LOCAL</a></li>
+      <li><a href="#us">US</a></li>
+    </ul>
+  </div>   
+</li>
               <li class="nav-item">
-              <a class="nav-link" href="#">World</a>
-            </li>
-                        <li class="nav-item">
-              <a class="nav-link" href="#tech">Technology</a>
-            </li>
-                        <li class="nav-item">
-              <a class="nav-link" href="#us">US</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:alert('This web app was created by Daniel Douglas, Myra Sarmiento, James Shively and Dann Frey for their ITC 250 Class at Seattle Central College.');">About</a>
-            </li>
+              <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">News 2
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#tech">TECHNOLOGY</a></li>
+      <li><a href="#health">HEALTH</a></li>
+      <li><a href="#business">BUSINESS</a></li>
+    </ul>
+  </div> 
+              </li>
+              
+        <li class="nav-item">
+              <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">News 3 
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#sports">SPORTS</a></li>
+      <li><a href="#sci">SCIENCE</a></li>
+      <li><a href="#ent">ENTERTAINMENT</a></li>
+    </ul>
+  </div>
+  </li>
           </ul>
         </div>
       </div>
-    </nav>
-
+    </nav>      
+      
     <!-- Page Content -->
     <div class="container">
 

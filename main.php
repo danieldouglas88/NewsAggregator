@@ -56,6 +56,7 @@ echo '
     $(document).ready(function(){
     $("#btn1").click(function(){
         <?php
+session_destroy();
 $_SESSION = array();
 ?>
     var d = new Date();
@@ -80,6 +81,60 @@ $_SESSION = array();
     d =  d.getTime();
         $("#3").html("Session cache ended at " + d + " universal time.");
         }); 
-    });
+        
+            $("#btn4").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#4").html("Session cache ended at " + d + " universal time.");
+        }); 
+        
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#5").html("Session cache ended at " + d + " universal time.");
+        
+                    $("#btn6").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#6").html("Session cache ended at " + d + " universal time.");
+        }); 
+        
+            $("#btn7").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#7").html("Session cache ended at " + d + " universal time.");
+        }); 
+        
+            $("#btn8").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#8").html("Session cache ended at " + d + " universal time.");
+        }); 
+        
+            $("#btn9").click(function(){
+        <?php
+$_SESSION = array();
+?>
+    var d = new Date();
+    d =  d.getTime();
+        $("#9").html("Session cache ended at " + d + " universal time.");
+        }); 
+        }); 
+        
+        
         
 </script>

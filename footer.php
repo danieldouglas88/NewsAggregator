@@ -22,7 +22,9 @@
 <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">News Aggregator App - 2018</p>
+        <p class="m-0 text-center text-white">News Aggregator App - 2018</p> <hr>
+        <center>   <a class="nav-link" href="javascript:alert('This web app was created by Daniel Douglas, Myra Sarmiento, James Shively and Dann Frey for their ITC 250 Class at Seattle Central College.');">About</a>
+            </center>
       </div>
       <!-- /.container -->
     </footer>
