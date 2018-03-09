@@ -56,7 +56,11 @@ echo '
     $(document).ready(function(){
     $("#btn1").click(function(){
         <?php
+<<<<<<< HEAD
 session_destroy();
+=======
+ session_destroy();
+>>>>>>> 7e58dfd95436a2995354bd467dc7ed3fcf891658
 $_SESSION = array();
 ?>
     var d = new Date();
