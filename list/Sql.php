@@ -73,9 +73,9 @@ $_SESSION["description9"] = str_replace("'","", $xml->channel[0]->item->descript
 
 
 $servername = "mysql.daniel-on-the-web.com";
-$username = "ddouglas";
-$password = "Qazxsw!123";
-$dbname = "danieldbxx";
+$username = "xxxxxxxxxxx";
+$password = "xxxxxxxxxx";
+$dbname = "xxxxxxxxxxx";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
