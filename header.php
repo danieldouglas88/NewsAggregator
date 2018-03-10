@@ -1,7 +1,6 @@
 <?php session_start([
     'cookie_lifetime' => 600,
 ]); 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +67,7 @@
       <li><a href="#health">HEALTH</a></li>
       <li><a href="#business">BUSINESS</a></li>
     </ul>
-  </div> 
+  </div>
               </li>
               
         <li class="nav-item">
@@ -82,8 +81,11 @@
     </ul>
   </div>
   </li>
+              
           </ul>
-        </div>
+          </div>
+          
+          <a href="#db"><button class="btn btn-primary">List/View</button></a>
       </div>
     </nav>      
       
